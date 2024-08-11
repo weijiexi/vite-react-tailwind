@@ -1,9 +1,8 @@
-# ReactApp with parcel and glsl
+#  Manual building vite project
 
 ## Running this project
 
-This project is set up with [Parcel Bundler](https://parceljs.org/), an npm package
-that compiles our frontend assets and comes with an integrated development server.
+This repo was building by [Vite](https://vitejs.dev/guide/) + [React](https://stackblitz.com/edit/vitejs-vite-5hwepw?file=index.html&terminal=dev).
 
 The dev server runs on port `5173` by default, but will use another if `5173` is
 being used by another application.
@@ -11,4 +10,4 @@ being used by another application.
 - Clone the repo.
 - Navigate into the project folder.
 - Run `npm i` to download the project's dependencies listed in the `package.json`.
-- Run `npm dev` to compile the React project and spin up the app on `http://localhost:5173`.
+- Run `npx vite` or `npm run dev` (for reactapp) to compile the React project and spin up the app on `http://localhost:5173`.

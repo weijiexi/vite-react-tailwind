@@ -1,22 +1,41 @@
 # Vite ReactApp 
 
-## Structure
+-   project structure
+
+```
+/vite-app-js
+├── index.html 
+├── .gitignore 
+├── package-lock.json 
+├── package.json 
+└── Readme.md
+```
+
+- Then run the vite CLI in your terminal:
+
+```
+npx vite 
+```
+
+###  B. Start Vite to render react
+
+structure
 
 ```
 /vite-react-js
 ├── src 
 │  ├── components
-│  │   └── App.js
+│  │   └── App.jsx
 │  ├── index.html 
-│  └── index.js
+│  └── index.jsx
 ├── .gitignore 
 ├── package.json 
 └── Readme.md
 ```
 
-prepare the initial file: `src/index.html`, `src/index.js`, `src/components/App.js`:
+prepare the initial file: `index.html`, `src/index.jsx`, `src/components/App.jsx`:
 
-`src/index.html`
+`index.html`
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -26,29 +45,38 @@ prepare the initial file: `src/index.html`, `src/index.js`, `src/components/App.
     <title>Vite ReactApp</title>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="index.js"></script>
+    <div id="root"></div>
+    <script type="module" src="src/index.jsx"></script>
   </body>
 </html>
 ```
 
--   `src/index.js`
+-   `src/index.jsx`
 
 ```js
-import { createRoot } from "react-dom/client";
-import { App } from "./components/App";
+import React, { StrictMode } from 'react';  
+import { createRoot } from 'react-dom/client';
+import App from './components/App';     
 
-const container = document.getElementById("app");
-const root = createRoot(container)
-root.render(<App />);
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+);
 ```
 
--   `src/components/App.js`
+-   `src/components/App.jsx`
 
 ```js
-export function App() {
-  return <h1>Hello world!</h1>;
-}
+import React from 'react';
+
+const App = () => {
+  return (
+    <h1>Hello</h1>
+  );
+};
+
+export default App;
 ```
 
 - install react react-dom
@@ -61,20 +89,20 @@ npm i --save react react-dom
 
 ```
   "scripts": {
-    "dev": "vite", // start dev server, aliases: `vite dev`, `vite serve`
-    "build": "vite build", // build for production
-    "preview": "vite preview" // locally preview production build
+    "dev": "vite", 
+    "build": "vite build", 
+    "preview": "vite preview" 
   },
 ```
 
 - run react
 
 ```sh
-npm dev
+npm run dev
 ```
 
 or
 
 ```sh
-npx vite src/index.html
+npx vite 
 ```
