@@ -1,5 +1,13 @@
 # Tailwind CSS Setup Guide for Vite React
 
+## Prework - update the vite and react react-dom
+
+```
+npm uninstall vite react react-dom
+npm install react@latest react-dom@latest
+npm install -D vite 
+```
+
 ## Step 1: Install Tailwind CSS and Dependencies
 
 Run the following command in your project directory:
